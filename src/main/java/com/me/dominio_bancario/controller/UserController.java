@@ -18,13 +18,13 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping
+    @GetMapping("/{id}")
     public ResponseEntity<User> findById(@PathVariable Long id) {
         var user = userService.findById(id);
         return ResponseEntity.ok(user);
     }
 
-    @GetMapping("/{id}")
+    @PostMapping
     public ResponseEntity<User> create(@RequestBody User userToCreate) {
         var userCreated = userService.create(userToCreate);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
