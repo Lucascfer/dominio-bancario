@@ -10,7 +10,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**") // Permite todas as rotas da sua API
-                .allowedOrigins("http://localhost:3000") // Permite requisições apenas desse domínio
+                .allowedOrigins("http://localhost:3000","https://api-prd-2024.up.railway.app/swagger-ui/index.html") // Permite requisições apenas desse domínio
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos HTTP permitidos
                 .allowedHeaders("*") // Todos os headers são permitidos
                 .allowCredentials(true); // Permite cookies e credenciais, se necessário
